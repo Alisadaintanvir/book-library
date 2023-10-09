@@ -6,14 +6,15 @@
 </head>
 <body>
 <h1>My Library</h1>
-    <ul>
+    <ol>
         {% if books == []: %}
         <li>Library is Empty</li>
         {% endif %}
         {% for book in books %}
-        <li>{{ book.title }} - {{ book.author }} - {{book.rating }} <a href="{{ url_for('edit', id= book.id) }}">Edit Rating</a> </li>
+        <li>{{ book.title }} - {{ book.author }} - {{book.rating }} <a href="{{ url_for('edit', id= book.id) }}">
+            Edit Rating</a> <a href="{{ url_for('delete', id= book.id) }}" >Delete Book</a> </li>
         {% endfor %}
-    </ul>
+    </ol>
     
 <a href="{{url_for('add') }}">Add New Book</a>
 </body>

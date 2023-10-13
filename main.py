@@ -43,7 +43,7 @@ def edit():
 
 
 @app.route('/delete/<int:id>')
-def delete():
+def delete(id):
     book_to_delete = Book.query.get(id)
 
     if book_to_delete:
